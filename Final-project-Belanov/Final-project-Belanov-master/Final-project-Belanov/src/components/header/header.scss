@@ -1,0 +1,127 @@
+@import 'variables';
+.header {
+	background-color: rgb(53, 50, 50);
+}
+.header-container {
+	height: 100px;
+}
+.contact-info {
+	height: 50px;
+	display: flex;
+}
+@mixin contacts-wrap($width: 100%) {
+	height: inherit;
+	text-align: center;
+	padding-top: 15px;
+	width: $width;
+	color: #fff;
+}
+.coords {
+	@include contacts-wrap(40%);
+	background-color: $mainBlackColor;
+}
+.contacts {
+	@include contacts-wrap(60%);
+	background-color: black;
+	display: flex;
+	justify-content: space-around;
+}
+@mixin header-icon() {
+	content: '';
+	position: absolute;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 20px;
+	left: -35px;
+	width: 20px;
+}
+.contacts__item,
+.coords__item {
+	position: relative;
+	color: white;
+	text-decoration: none;
+}
+.coords__item::before {
+	@include header-icon();
+	background-image: url('../../photo/map.png');
+}
+.contacts__item:before {
+	@include header-icon();
+	background-image: url('../../photo/email.png');
+}
+.contacts__item:last-child:before {
+	background-image: url('../../photo/phone.png');
+}
+.logo-wrapper {
+	cursor: pointer;
+	margin-left: 30px;
+	margin-top: 2px;
+	width: 100px;
+	height: 100px;
+	background-image: url('../../photo/logo.jpg');
+	background-color: $mainGreenColor;
+	background-size: cover;
+	border-radius: 50%;
+	background-position: center;
+}
+.header-nav {
+	height: inherit;
+	display: flex;
+	justify-content: space-between;
+	
+}
+.buttons-wrapper {
+	display: flex;
+	margin-right: 10px;
+	padding-right: 150px;
+	max-height: 130px;
+	align-self: center;
+	
+	
+	
+
+
+}
+
+@media screen and (max-width: 1000px) {
+	.header {
+		.coords,
+		.contacts {
+			width: 50%;
+		}
+		.contacts__item:first-child {
+			display: none;
+		}
+		.buttons-wrapper {
+			padding-right: 0;
+			.header-links:first-child {
+				display: none;
+			
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.header {
+		.coords__item {
+			display: block;
+			width: 150px;
+			margin: auto;
+			&::before {
+				left: -10px;
+			}
+		}
+		.contacts__item::before {
+			left: -25px;
+		}
+		.header-nav {
+			justify-content: space-around;
+			.header-links {
+				display: none;
+				
+				
+			}
+		}
+	}
+}

@@ -1,0 +1,48 @@
+@import 'variables';
+
+.button {
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	color: black;
+	text-decoration: none;
+	border: solid transparent 1px;
+	cursor: pointer;
+	
+	
+	background-color: #fff;
+		&:hover {
+		border: $mainBlackColor solid 1px;
+		color: #fff; 
+		background: rgb(175, 150, 5);
+		border-radius: 10px; 
+		
+	
+		
+	}
+	padding: 5px 10px;
+	margin: 0px 5px;
+	&:disabled {
+		background-color: $mainGrayColor;
+		cursor: auto;
+		&:hover {
+			background-color: $mainGrayColor;
+			color: $mainBlackColor;
+		}
+	}
+}
+.signup-button:hover {
+	border-color: #fff;
+	background-color: $mainGreenColor;
+	color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+	.button {
+		border: 2px solid $mainBlackColor;
+		border-radius: 5px;
+		font-size: 18px;
+		&:hover {
+			border: 2px solid $mainBlackColor;
+		}
+	}
+}

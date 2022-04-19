@@ -1,0 +1,128 @@
+@import 'variables';
+.dropdown-wrapper {
+	position: relative;
+
+	.dropdown__item {
+		display: flex;
+		flex-direction: column;
+		background-color: rgb(230, 219, 157);
+		position: absolute;
+		padding: 20px;
+		top: 75px;
+		left: -40px;
+		color: black;
+		border-radius: 20px;
+		box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
+		a {
+			text-decoration: none;
+		}
+		ul {
+			padding: 0;
+			background: #fff;
+			border-radius: 5px;
+		}
+		li {
+			color: $mainBlackColor;
+			width: 246px;
+			background: none;
+			border-radius: 5px;
+			margin: 0;
+			line-height: 21px;
+			padding: 7px;
+			background: #fff;
+			word-break: break-all;
+			list-style-type: none;
+			&:hover {
+				background-color: $mainGrayColor;
+			}
+		}
+	}
+}
+
+.dropdown-button::after {
+	position: absolute;
+	right: 0;
+	top: 220px;
+	background-size: cover;
+	content: '';
+	width: 200px;
+	height: 240px;
+	border-radius: 20px;
+	background-image: url('../../photo/EG_KfuoBGXE_.jpg');
+}
+.profile-button {
+	margin-top: -10px;
+}
+.dropdown__item-auth {
+	top: 75px;
+}
+
+.dropdown__item-corner {
+	width: 20px;
+	height: 20px;
+	background: $mainBlackColor;
+	transform: rotate(45deg);
+	top: 65px;
+	left: 28px;
+	position: absolute;
+}
+
+@media screen and (max-width: 1300px) {
+	.dropdown-wrapper {
+		.dropdown__item {
+			left: -100px;
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.dropdown-wrapper {
+		.dropdown__item {
+			left: -227px;
+
+			&.dropdown__item-auth {
+				left: -210px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.dropdown-wrapper {
+		align-self: center;
+		& > button {
+			padding: 10px 25px;
+		}
+
+		.dropdown__item {
+			font-size: 20px;
+			left: -220px;
+			&.dropdown__item-auth {
+				li {
+					width: 250px;
+				}
+			}
+			input {
+				height: 50px;
+				font-size: 20px;
+			}
+			button {
+				height: 60px;
+				padding: 5px;
+				&:first-child {
+					margin-right: 10px;
+				}
+			}
+		}
+		.dropdown__item-corner {
+			left: 45px;
+		}
+	}
+}
+@media screen and (max-width: 400px) {
+	.dropdown-wrapper {
+		.dropdown__item {
+			left: -190px;
+		}
+	}
+}

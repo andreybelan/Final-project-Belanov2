@@ -1,0 +1,44 @@
+@import 'variables';
+body {
+	height: 100%;
+	background-image: url('./photo/hero-img.jpg');
+	background-position-y: 50px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	color: $mainBlackColor;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	* {
+		box-sizing: border-box;
+	}
+	.swal-footer {
+		text-align: center;
+		.swal-button {
+			padding: 10px 50px;
+			background-color: $mainGreenColor;
+			&:not([disabled]):hover {
+				background-color: $mainGrayColor;
+			}
+		}
+	}
+}
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+.container {
+	position: relative;
+	z-index: 1;
+	max-width: 1256px;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 1300px) {
+	body {
+		background-size: cover;
+	}
+}

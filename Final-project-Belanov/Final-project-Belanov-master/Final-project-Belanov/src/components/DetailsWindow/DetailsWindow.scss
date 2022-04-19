@@ -1,0 +1,60 @@
+@import 'variables';
+
+.window-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 40px 60px;
+	background-color: $mainBlackColor;
+	color: #fff;
+	font-size: 20px;
+	input,
+	select {
+		height: 40px;
+		width: 300px;
+	}
+	h2 {
+		text-align: center;
+	}
+	a {
+		text-decoration: none;
+	}
+	.window-buttons-wrapper {
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
+		.button {
+			text-align: center;
+			width: 150px;
+			margin-right: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.window-container {
+		margin: 0;
+		padding: 0px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		.auth-wrap {
+			label {
+				font-size: 16px;
+			}
+			input,
+			select {
+				width: 250px;
+			}
+		}
+		.window-buttons-wrapper {
+			display: flex;
+			flex-direction: column;
+			align-self: center;
+			.button {
+				width: 300px;
+				margin: 20px 0;
+			}
+		}
+	}
+}
